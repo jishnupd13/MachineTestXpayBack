@@ -8,4 +8,8 @@ class AppRepository(private val retrofitService: ApiService) {
         limit: Int,
         skip: Int
     ) = retrofitService.fetchUsers(limit, skip)
+
+    suspend fun fetchUserDetails(
+        id:Int
+    ) = retrofitService.fetchUsersDetails(id)
 }

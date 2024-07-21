@@ -8,6 +8,7 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.xpayback.machinetest.databinding.FragmentUsersBinding
 import com.xpayback.machinetest.models.network_result.NetworkResult
 import com.xpayback.machinetest.ui.users_list.adapter.UsersAdapter
@@ -41,7 +42,11 @@ class UsersFragment:Fragment() {
     }
 
     private fun initViews() = binding.apply {
-        adapter = UsersAdapter(list = mutableListOf())
+        adapter = UsersAdapter(list = mutableListOf()){
+            findNavController().navigate(UsersFragmentDirections.actionUsersFragmentToUserDetailsFragment(
+                id = it.id ?: 0
+            ))
+        }
         recyclerviewUsers.adapter = adapter
         observeUsers()
 

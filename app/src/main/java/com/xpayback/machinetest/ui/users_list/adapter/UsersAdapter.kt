@@ -12,10 +12,11 @@ import com.xpayback.machinetest.databinding.CellUsersBinding
 import com.xpayback.machinetest.models.users.User
 
 class UsersAdapter(
-    private var list: MutableList<User>
+    private var list: MutableList<User>,
+    val onItemClick:(item:User)->Unit
 ) : Adapter<UsersAdapter.UsersViewHolder>() {
 
-     class UsersViewHolder(private val binding: CellUsersBinding):ViewHolder(binding.root){
+     inner class UsersViewHolder(private val binding: CellUsersBinding):ViewHolder(binding.root){
         @SuppressLint("SetTextI18n")
         fun onBind(item: User) =binding.apply {
 
@@ -31,6 +32,10 @@ class UsersAdapter(
                 .skipMemoryCache(false)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imgUser)
+
+            root.setOnClickListener {
+               onItemClick.invoke(item)
+            }
         }
     }
 

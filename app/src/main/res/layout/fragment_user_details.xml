@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutToolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        >
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white"
+            android:padding="10dp"
+            android:contentDescription="Back Button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_users_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Users"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:maxLines="1"
+            android:ellipsize="marquee"
+            android:layout_marginEnd="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/img_back"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fitsSystemWindows="true"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/img_user_container"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="12dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_user"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:contentDescription="@null"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <LinearLayout
+                android:id="@+id/layout_personal_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_user_container"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="14dp"
+                >
+
+                <TextView
+                    android:id="@+id/text_personal_details_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="Personal Details"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:id="@+id/row_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textEmailValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Email"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textPhoneValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Phone"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textGender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gender"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textGenderValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="gender"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textAge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textAgeValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="gender"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textDob"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Dob"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textDobValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="dob"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textBloodGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Blood Group"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textBloodGroupValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Blood Group"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_address_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_personal_details"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="14dp"
+                >
+
+                <TextView
+                    android:id="@+id/text_address_details_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="Address Details"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textAddressValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Address"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textCity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textCityValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="City"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textState"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="State"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textStateValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="State"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textPostalCode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Postal Code"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textPostalValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Postal Code"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textCountry"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Country"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textCountryValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        tools:text="Country"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_company_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="14dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_address_details"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/text_company_details_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company Details"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/textCompanyName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Company"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textCompanyNameValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText"
+                        tools:text="Company" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/textDepartment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Department"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textDepartmentValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText"
+                        tools:text="Department" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/textDesignation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Designation"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textDesignationValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText"
+                        tools:text="Designation" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/textCompanyCountry"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Country"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textCompanyCountryValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText"
+                        tools:text="Country" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:indeterminateTint="@color/black"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

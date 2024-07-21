@@ -11,7 +11,7 @@ import com.xpayback.machinetest.repository.AppRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UsersListViewModel(val repository: AppRepository) :ViewModel() {
+class UsersListViewModel(private val repository: AppRepository) :ViewModel() {
 
     var currentPage = 1
     private var skip = 0
