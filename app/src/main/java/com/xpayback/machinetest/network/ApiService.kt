@@ -1,15 +1,14 @@
 package com.xpayback.machinetest.network
 
-import com.xpayback.machinetest.models.network_result.NetworkResult
 import com.xpayback.machinetest.models.users.UsersListResponse
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
-    @GET("users?limit={limit}&skip={skip}")
+    @GET("users?")
     suspend fun fetchUsers(
-        @Path("limit") limit: Int,
-        @Path("skip") skip: Int
-    ): Response<NetworkResult<UsersListResponse>>
+        @Query("limit") limit: Int,
+        @Query("skip") skip: Int
+    ): Response<UsersListResponse>
 }

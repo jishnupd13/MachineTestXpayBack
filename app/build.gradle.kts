@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.androidx.navigation.safeargs)
 }
 
 android {
@@ -35,7 +36,7 @@ android {
     }
 
     buildFeatures{
-        viewBinding =  true
+        viewBinding = true
     }
 }
 
@@ -59,6 +60,12 @@ dependencies {
 
     //Ktx
     implementation(libs.androidx.fragment)
+
+    //Circle ImageView
+    implementation(libs.circle.image)
+
+    implementation (libs.glide)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
